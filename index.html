@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A & K ATM - Full Service ATM Solutions</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Arial', sans-serif;
+line-height: 1.6;
+color: #333;
+background-color: #f8f9fa;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* Header */
+header {
+background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+color: white;
+padding: 1rem 0;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 2rem;
+font-weight: bold;
+color: #fff;
+}
+
+.nav-links {
+display: flex;
+list-style: none;
+gap: 2rem;
+}
+
+.nav-links a {
+color: white;
+text-decoration: none;
+font-weight: 500;
+transition: color 0.3s;
+}
+
+.nav-links a:hover {
+color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+background: linear-gradient(rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f0f0" width="1200" height="600"/><text x="600" y="300" text-anchor="middle" fill="%23999" font-size="24" font-family="Arial">ATM Business Hero Image</text></svg>');
+background-size: cover;
+background-position: center;
+height: 100vh;
+display: flex;
+align-items: center;
+color: white;
+text-align: center;
+margin-top: 80px;
+}
+
+.hero-content h1 {
+font-size: 4rem;
+margin-bottom: 1rem;
+animation: fadeInUp 1s ease-out;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+font-size: 1.8rem;
+margin-bottom: 2rem;
+animation: fadeInUp 1s ease-out 0.3s both;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.cta-button {
+background: linear-gradient(45deg, #ffd700, #ffed4e);
+color: #1e3c72;
+padding: 1rem 2rem;
+border: none;
+border-radius: 50px;
+font-size: 1.2rem;
+font-weight: bold;
+cursor: pointer;
+transition: transform 0.3s, box-shadow 0.3s;
+text-decoration: none;
+display: inline-block;
+animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.cta-button:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+/* Services Section */
+.services {
+padding: 5rem 0;
+background: white;
+}
+
+.section-title {
+text-align: center;
+font-size: 2.5rem;
+margin-bottom: 3rem;
+color: #1e3c72;
+}
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+
+.service-card {
+background: white;
+border-radius: 15px;
+padding: 2rem;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+transition: transform 0.3s, box-shadow 0.3s;
+border: 2px solid transparent;
+}
+
+.service-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+border-color: #ffd700;
+}
+
+.service-card h3 {
+color: #1e3c72;
+font-size: 1.5rem;
+margin-bottom: 1rem;
+}
+
+.service-card .price {
+font-size: 2rem;
+color: #27ae60;
+font-weight: bold;
+margin-bottom: 1rem;
+}
+
+.service-features {
+list-style: none;
+margin-bottom: 1.5rem;
+}
+
+.service-features li {
+padding: 0.5rem 0;
+border-bottom: 1px solid #eee;
+}
+
+.service-features li:before {
+content: "✓"
+color: #27ae60;
+margin-right: 0.5rem;
+font-weight: bold;
+}
+
+/* Company Story Section */
+.company-story {
+padding: 5rem 0;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+position: relative;
+overflow: hidden;
+}
+
+.company-story::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+opacity: 0.3;
+}
+
+.story-content {
+position: relative;
+z-index: 2;
+text-align: center;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.story-content h2 {
+font-size: 3rem;
+margin-bottom: 2rem;
+background: linear-gradient(45deg, #ffd700, #ffed4e);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.story-content p {
+font-size: 1.3rem;
+line-height: 1.8;
+margin-bottom: 2rem;
+opacity: 0.95;
+}
+
+.story-stats {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+
+.stat-item {
+text-align: center;
+padding: 1.5rem;
+background: rgba(255,255,255,0.1);
+border-radius: 15px;
+backdrop-filter: blur(10px);
+}
+
+.stat-number {
+font-size: 3rem;
+font-weight: bold;
+color: #ffd700;
+display: block;
+}
+
+.stat-label {
+font-size: 1rem;
+opacity: 0.9;
+margin-top: 0.5rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+padding: 5rem 0;
+background: white;
+position: relative;
+}
+
+.testimonials-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+
+.testimonial-card {
+background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+padding: 2.5rem;
+border-radius: 20px;
+box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+position: relative;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.testimonial-card::before {
+content: '"';
+font-size: 6rem;
+color: #1e3c72;
+opacity: 0.3;
+position: absolute;
+top: -1rem;
+left: 1rem;
+font-family: serif;
+}
+
+.testimonial-text {
+font-size: 1.1rem;
+line-height: 1.6;
+margin-bottom: 2rem;
+color: #333;
+font-style: italic;
+}
+
+.testimonial-author {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.author-avatar {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background: linear-gradient(45deg, #1e3c72, #2a5298);
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-weight: bold;
+font-size: 1.5rem;
+}
+
+.author-info h4 {
+color: #1e3c72;
+margin-bottom: 0.25rem;
+}
+
+.author-info p {
+color: #666;
+font-size: 0.9rem;
+}
+
+.stars {
+color: #ffd700;
+font-size: 1.2rem;
+margin-top: 0.5rem;
+}
+
+/* ATM Models Section */
+.atm-models {
+padding: 5rem 0;
+background: #f8f9fa;
+}
+
+.models-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 2rem;
+margin-top: 3rem;
+}
+
+.model-card {
+background: white;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+transition: transform 0.3s, box-shadow 0.3s;
+border: 3px solid transparent;
+}
+
+.model-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+border-color: #ffd700;
+}
+
+.model-image {
+width: 100%;
+height: 280px;
+background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 1.2rem;
+position: relative;
+overflow: hidden;
+}
+
+.model-image::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><path d="M5,5 L15,5 M5,15 L15,15 M5,5 L5,15 M15,5 L15,15" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>');
+}
+
+.atm-icon {
+font-size: 4rem;
+margin-bottom: 1rem;
+position: relative;
+z-index: 2;
+}
+
+.model-name {
+position: relative;
+z-index: 2;
+font-weight: bold;
+font-size: 1.3rem;
+}
+
+.model-info {
+padding: 2rem;
+}
+
+.model-info h3 {
+color: #1e3c72;
+margin-bottom: 1rem;
+font-size: 1.4rem;
+}
+
+.model-features {
+list-style: none;
+margin-top: 1.5rem;
+}
+
+.model-features li {
+padding: 0.5rem 0;
+border-bottom: 1px solid #eee;
+position: relative;
+padding-left: 1.5rem;
+}
+
+.model-features li:before {
+content: "✓"
+color: #27ae60;
+font-weight: bold;
+position: absolute;
+left: 0;
+}
+
+.model-features li:last-child {
+border-bottom: none;
+}
+
+.model-badge {
+position: absolute;
+top: 1rem;
+right: 1rem;
+background: #ffd700;
+color: #1e3c72;
+padding: 0.5rem 1rem;
+border-radius: 20px;
+font-weight: bold;
+font-size: 0.8rem;
+z-index: 3;
+}
+
+/* Revenue Calculator */
+.calculator {
+padding: 5rem 0;
+background: white;
+}
+
+.calc-container {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+border-radius: 20px;
+padding: 3rem;
+color: white;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.calc-group {
+margin-bottom: 2rem;
+}
+
+.calc-group label {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: bold;
+}
+
+.calc-group input, .calc-group select {
+width: 100%;
+padding: 1rem;
+border: none;
+border-radius: 10px;
+font-size: 1rem;
+}
+
+.calc-result {
+background: rgba(255,255,255,0.2);
+padding: 2rem;
+border-radius: 15px;
+margin-top: 2rem;
+text-align: center;
+}
+
+.calc-result h3 {
+font-size: 2rem;
+margin-bottom: 1rem;
+}
+
+.revenue-amount {
+font-size: 3rem;
+font-weight: bold;
+color: #ffd700;
+}
+
+/* Error Codes Section */
+.error-codes {
+padding: 5rem 0;
+background: #f8f9fa;
+}
+
+.search-container {
+max-width: 600px;
+margin: 0 auto 3rem;
+}
+
+.search-box {
+width: 100%;
+padding: 1rem;
+border: 2px solid #ddd;
+border-radius: 50px;
+font-size: 1.1rem;
+text-align: center;
+}
+
+.search-box:focus {
+outline: none;
+border-color: #1e3c72;
+}
+
+.error-results {
+display: grid;
+gap: 1rem;
+margin-top: 2rem;
+}
+
+.error-item {
+background: white;
+padding: 1.5rem;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+display: none;
+}
+
+.error-item.visible {
+display: block;
+}
+
+.error-code {
+font-weight: bold;
+color: #e74c3c;
+font-size: 1.2rem;
+}
+
+.error-description {
+margin-top: 0.5rem;
+color: #666;
+}
+
+/* Footer */
+footer {
+background: #1e3c72;
+color: white;
+padding: 3rem 0;
+text-align: center;
+}
+
+.footer-content {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+margin-bottom: 1rem;
+color: #ffd700;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.nav-links {
+display: none;
+}
+.hero-content h1 {
+font-size: 2.5rem;
+}
+.hero-content p {
+font-size: 1.2rem;
+}
+}
+</style>
+</head>
+<body>
+<header>
+<nav class="container">
+<div class="logo">A & K ATM</div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#models">ATM Models</a></li>
+<li><a href="#calculator">Calculator</a></li>
+<li><a href="#error-codes">Error Codes</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section id="home" class="hero">
+<div class="container">
+<div class="hero-content">
+<h1>Industry-Leading ATM Solutions</h1>
+<p>Where Innovation Meets Profitability - Your Success is Our Mission</p>
+<a href="#services" class="cta-button">Start Earning More Today</a>
+</div>
+</div>
+</section>
+
+<section class="company-story">
+<div class="container">
+<div class="story-content">
+<h2>Why A & K ATM Leads the Industry</h2>
+<p>For over a decade, A & K ATM has revolutionized the ATM placement industry with our unwavering commitment to excellence and innovation. We don't just place ATMs—we create financial ecosystems that drive revenue and enhance customer experiences.</p>
+<p>What sets us apart is our relentless focus on partnership. While competitors treat you as just another account, we become an extension of your business. Our proprietary analytics platform provides real-time insights, our 24/7 monitoring ensures 99.9% uptime, and our revenue optimization strategies consistently outperform industry standards by 35%.</p>
+<p>We've pioneered the industry's most comprehensive maintenance program, eliminated hidden fees that plague our competitors, and developed exclusive partnerships with leading manufacturers to offer you the latest technology at unbeatable prices.</p>
+<div class="story-stats">
+<div class="stat-item">
+<span class="stat-number">10+</span>
+<span class="stat-label">Years of Excellence</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">99.9%</span>
+<span class="stat-label">Uptime Guarantee</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">35%</span>
+<span class="stat-label">Above Industry Average</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">24/7</span>
+<span class="stat-label">Support & Monitoring</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services" class="services">
+<div class="container">
+<h2 class="section-title">Our ATM Services</h2>
+<div class="services-grid">
+<div class="service-card">
+<h3>PREMIUM ATM Placement</h3>
+<div class="price">ZERO COST</div>
+<ul class="service-features">
+<li>Latest Genmega G2500 or Hyosung Force</li>
+<li>Professional installation & setup</li>
+<li>24/7 monitoring & maintenance</li>
+<li>Client provides secure cash loading</li>
+<li>Optimized revenue sharing partnership</li>
+<li>Multi-denomination capability ($5-$50)</li>
+<li>Real-time analytics dashboard</li>
+</ul>
+<button class="cta-button">Claim Your ATM</button>
+</div>
+
+<div class="service-card">
+<h3>Own Your ATM - New</h3>
+<div class="price">MAXIMUM ROI</div>
+<ul class="service-features">
+<li>Premium new ATM with warranty</li>
+<li>Complimentary professional installation</li>
+<li>Comprehensive maintenance coverage</li>
+<li>Secure cash management system</li>
+<li>100% surcharge revenue (minimal processing fee)</li>
+<li>Advanced multi-denomination dispensing</li>
+<li>Proprietary profit optimization tools</li>
+</ul>
+<button class="cta-button">Get ROI Analysis</button>
+</div>
+
+<div class="service-card">
+<h3>Certified Pre-Owned ATM</h3>
+<div class="price">SMART VALUE</div>
+<ul class="service-features">
+<li>Thoroughly refurbished premium ATM</li>
+<li>Professional installation included</li>
+<li>Full maintenance & support coverage</li>
+<li>Secure cash loading protocols</li>
+<li>100% surcharge revenue (minimal processing)</li>
+<li>Reliable multi-denomination options</li>
+<li>Performance guarantee & warranty</li>
+</ul>
+<button class="cta-button">View Inventory</button><li>Refurbished ATM machine</li>
+<li>Free installation</li>
+<li>Processing & maintenance included</li>
+<li>Client provides cash</li>
+<li>100% surcharge revenue (minus small processing fee)</li>
+<li>$5, $10 & $20 dispensing</li>
+</ul>
+<button class="cta-button">View Options</button>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</section>
+
+<section class="testimonials">
+<div class="container">
+<h2 class="section-title">What Our Partners Say</h2>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="testimonial-text">
+"A & K ATM transformed our convenience store revenue overnight. Their G2500 machine processes transactions flawlessly, and we've seen a 40% increase in foot traffic. The revenue sharing model has added $2,800 monthly to our bottom line. Simply outstanding!"
+</div>
+<div class="testimonial-author">
+<div class="author-avatar">M</div>
+<div class="author-info">
+<h4>Mike Rodriguez</h4>
+<p>Owner, Express Mart Chain</p>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+</div>
+
+<div class="testimonial-card">
+<div class="testimonial-text">
+"We switched from another ATM company to A & K ATM and the difference is night and day. Their 24/7 monitoring caught issues before we even knew they existed. The Hyosung Force is a customer favorite, and our transaction volume doubled in 6 months."
+</div>
+<div class="testimonial-author">
+<div class="author-avatar">S</div>
+<div class="author-info">
+<h4>Sarah Chen</h4>
+<p>Manager, Downtown Hotel</p>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+</div>
+
+<div class="testimonial-card">
+<div class="testimonial-text">
+"Five years with A & K ATM and they've never let us down. Their maintenance response time is incredible—usually within 2 hours. The revenue analytics dashboard helps us optimize placement and timing. Best business decision we ever made."
+</div>
+<div class="testimonial-author">
+<div class="author-avatar">J</div>
+<div class="author-info">
+<h4>James Thompson</h4>
+<p>CEO, Thompson Sports Complex</p>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+</div>
+
+<div class="testimonial-card">
+<div class="testimonial-text">
+"A & K ATM doesn't just provide machines—they're true partners. They analyzed our customer patterns and recommended the perfect placement strategy. Our ATM now generates $4,200 monthly, exceeding all projections. Professional, reliable, profitable."
+</div>
+<div class="testimonial-author">
+<div class="author-avatar">L</div>
+<div class="author-info">
+<h4>Lisa Martinez</h4>
+<p>Owner, Martinez Restaurant Group</p>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+</div>
+
+<div class="testimonial-card">
+<div class="testimonial-text">
+"The difference between A & K ATM and our previous provider is staggering. Zero downtime in 18 months, transparent reporting, and their profit optimization strategies increased our revenue by 55%. They've earned our trust and loyalty."
+</div>
+<div class="testimonial-author">
+<div class="author-avatar">D</div>
+<div class="author-info">
+<h4>David Park</h4>
+<p>Director, University Student Center</p>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+</div>
+
+<div class="testimonial-card">
+<div class="testimonial-text">
+"A & K ATM transformed our nightclub's cash flow dynamics. Their advanced ATM handles high-volume nights flawlessly, and the real-time monitoring gives us complete confidence. Revenue jumped 65% compared to our old machine. Game-changer!"
+</div>
+<div class="testimonial-author">
+<div class="author-avatar">R</div>
+<div class="author-info">
+<h4>Rachel Williams</h4>
+<p>Owner, Elite Nightclub</p>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="models" class="atm-models">
+<div class="container">
+<h2 class="section-title">Premium ATM Models</h2>
+<div class="models-grid">
+<div class="model-card">
+<div class="model-image">
+<div class="model-badge">BEST SELLER</div>
+<div style="text-align: center;">
+<div class="atm-icon">🏧</div>
+<div class="model-name">Genmega G2500</div>
+</div>
+</div>
+<div class="model-info">
+<h3>Genmega G2500 - Industry Leader</h3>
+<p>The gold standard in retail ATM technology. Engineered for maximum reliability and user satisfaction, the G2500 delivers unmatched performance in high-traffic environments.</p>
+<ul class="model-features">
+<li>Revolutionary 10.4" color touchscreen display</li>
+<li>Advanced EMV chip card technology</li>
+<li>Multi-denomination dispensing ($5, $10, $20, $50)</li>
+<li>Enhanced anti-skimming protection</li>
+<li>ADA compliant with audio assistance</li>
+<li>Lightning-fast 15-second transaction time</li>
+<li>Proprietary predictive maintenance system</li>
+</ul>
+</div>
+</div>
+
+<div class="model-card">
+<div class="model-image">
+<div class="model-badge">PREMIUM</div>
+<div style="text-align: center;">
+<div class="atm-icon">🏧</div>
+<div class="model-name">Hyosung Force</div>
+</div>
+</div>
+<div class="model-info">
+<h3>Hyosung Force - Next Generation</h3>
+<p>Breakthrough innovation meets exceptional design. The Force series represents the future of ATM technology with unparalleled security features and user experience optimization.</p>
+<ul class="model-features">
+<li>Cutting-edge 12.1" HD touchscreen interface</li>
+<li>Biometric security integration ready</li>
+<li>Dynamic currency recognition system</li>
+<li>Advanced fraud detection algorithms</li>
+<li>Contactless transaction capability</li>
+<li>Real-time performance analytics</li>
+<li>Energy-efficient green technology</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="calculator" class="calculator">
+<div class="container">
+<h2 class="section-title">ATM Revenue Calculator</h2>
+<div class="calc-container">
+<h3 style="text-align: center; margin-bottom: 2rem;">Calculate Your Potential Revenue</h3>
+<div class="calc-group">
+<label for="daily-transactions">Daily Transactions:</label>
+<input type="number" id="daily-transactions" value="15" min="1" max="1000">
+</div>
+
+<div class="calc-group">
+<label for="surcharge-fee">Surcharge Fee ($):</label>
+<input type="number" id="surcharge-fee" value="3.00" min="0.50" max="10.00" step="0.25">
+</div>
+
+<div class="calc-group">
+<label for="revenue-split">Revenue Split:</label>
+<select id="revenue-split">
+<option value="0.5">50/50 Split (Free ATM)</option>
+<option value="1.0" selected>100% Yours (Purchased ATM)</option>
+<option value="0.7">70% Yours</option>
+<option value="0.8">80% Yours</option>
+</select>
+</div>
+
+<div class="calc-result">
+<h3>Your Potential Revenue</h3>
+<div class="revenue-amount" id="monthly-revenue">$1,350</div>
+<p>per month</p>
+<div style="margin-top: 1rem;">
+<strong>Daily: $<span id="daily-revenue">45.00</span></strong><br>
+<strong>Yearly: $<span id="yearly-revenue">16,200</span></strong>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="error-codes" class="error-codes">
+<div class="container">
+<h2 class="section-title">ATM Error Code Lookup</h2>
+<div class="search-container">
+<input type="text" class="search-box" id="error-search" placeholder="Enter error code or description...">
+</div>
+<div class="error-results" id="error-results">
+<div class="error-item" data-code="E001" data-description="cash dispenser error">
+<div class="error-code">E001</div>
+<div class="error-description">Cash Dispenser Error - Check cash cassette and dispenser mechanism</div>
+</div>
+<div class="error-item" data-code="E002" data-description="card reader error">
+<div class="error-code">E002</div>
+<div class="error-description">Card Reader Error - Clean card reader or replace if necessary</div>
+</div>
+<div class="error-item" data-code="E003" data-description="printer error">
+<div class="error-code">E003</div>
+<div class="error-description">Receipt Printer Error - Check paper supply and printer mechanism</div>
+</div>
+<div class="error-item" data-code="E004" data-description="communication error">
+<div class="error-code">E004</div>
+<div class="error-description">Communication Error - Check network connection and phone line</div>
+</div>
+<div class="error-item" data-code="E005" data-description="keypad error">
+<div class="error-code">E005</div>
+<div class="error-description">Keypad Error - Clean keypad or check connections</div>
+</div>
+<div class="error-item" data-code="E006" data-description="power supply error">
+<div class="error-code">E006</div>
+<div class="error-description">Power Supply Error - Check power connections and voltage</div>
+</div>
+<div class="error-item" data-code="E007" data-description="memory error">
+<div class="error-code">E007</div>
+<div class="error-description">Memory Error - System memory issue, may require restart</div>
+</div>
+<div class="error-item" data-code="E008" data-description="sensor error">
+<div class="error-code">E008</div>
+<div class="error-description">Sensor Error - Check door sensors and alignment</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer id="contact">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h3>Contact Us</h3>
+<p>Ready to boost your business with an ATM?</p>
+<p>Call us today to discuss your options!</p>
+</div>
+<div class="footer-section">
+<h3>Services</h3>
+<p>• Free ATM Placement</p>
+<p>• New & Used ATM Sales</p>
+<p>• Processing & Maintenance</p>
+<p>• 24/7 Support</p>
+</div>
+<div class="footer-section">
+<h3>Business Locations</h3>
+<p>• Retail Stores</p>
+<p>• Hotels/Resorts</p>
+<p>• Bars/Nightclubs</p>
+<p>• Colleges/Universities</p>
+<p>• Sporting Arenas</p>
+</div>
+</div>
+<div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #444;">
+<p>&copy; 2025 A & K ATM. All rights reserved. | Full Service ATM Solutions</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Revenue Calculator
+function updateRevenue() {
+const dailyTransactions = parseInt(document.getElementById('daily-transactions').value) || 0;
+const surchargeFee = parseFloat(document.getElementById('surcharge-fee').value) || 0;
+const revenueSplit = parseFloat(document.getElementById('revenue-split').value) || 0;
+
+const dailyRevenue = dailyTransactions * surchargeFee * revenueSplit;
+const monthlyRevenue = dailyRevenue * 30;
+const yearlyRevenue = dailyRevenue * 365;
+
+document.getElementById('daily-revenue').textContent = dailyRevenue.toFixed(2);
+document.getElementById('monthly-revenue').textContent = '$' + monthlyRevenue.toLocaleString();
+document.getElementById('yearly-revenue').textContent = yearlyRevenue.toLocaleString();
+}
+
+// Add event listeners for calculator
+document.getElementById('daily-transactions').addEventListener('input', updateRevenue);
+document.getElementById('surcharge-fee').addEventListener('input', updateRevenue);
+document.getElementById('revenue-split').addEventListener('change', updateRevenue);
+
+// Error Code Search
+function searchErrorCodes() {
+const searchTerm = document.getElementById('error-search').value.toLowerCase();
+const errorItems = document.querySelectorAll('.error-item');
+
+errorItems.forEach(item => {
+const code = item.getAttribute('data-code').toLowerCase();
+const description = item.getAttribute('data-description').toLowerCase();
+if (code.includes(searchTerm) || description.includes(searchTerm) || searchTerm === '') {
+item.classList.add('visible');
+} else {
+item.classList.remove('visible');
+}
+});
+}
+
+document.getElementById('error-search').addEventListener('input', searchErrorCodes);
+
+// Show all error codes by default
+document.querySelectorAll('.error-item').forEach(item => {
+item.classList.add('visible');
+});
+
+// Smooth scrolling for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+
+// Initialize calculator
+updateRevenue();
+</script>
